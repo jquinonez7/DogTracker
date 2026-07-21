@@ -1,7 +1,8 @@
 # DogTracker Backend
 
-DogTracker is a FastAPI backend for a dog health-tracking application.
-Right now the project includes authentication, database setup, and a basic API structure. The backend is fully functional on its own and serves as the foundation for the future frontend and full health-logging features.
+**Status: Prototype.** This is an early-stage backend built to learn FastAPI, JWT auth, and SQLModel. It currently uses SQLite for simplicity. The plan is to eventually migrate to a managed backend (e.g. Supabase) for production use, along with building out the frontend and full health-logging features.
+
+DogTracker is a FastAPI backend for a dog health-tracking application. Right now the project includes authentication, database setup, and a basic API structure. The backend is fully functional on its own and serves as the foundation for the future frontend and full health-logging features.
 
 ## Features (Current)
 
@@ -27,9 +28,8 @@ Right now the project includes authentication, database setup, and a basic API s
 
 1. User logs in with email/username + password.
 2. Password is verified using hash functions in `auth.py`.
-3. A JWT access token is generated with the user’s identity in the payload (`sub`).
+3. A JWT access token is generated with the user's identity in the payload (`sub`).
 4. Protected routes depend on `get_current_user`, which:
-
    * extracts the token
    * decodes it
    * validates it
@@ -38,6 +38,7 @@ Right now the project includes authentication, database setup, and a basic API s
 
 ## Future Plans
 
+* Migrate database from SQLite to a managed backend (e.g. Supabase)
 * Dog model + owner relationship
 * CRUD routes for meals, symptoms, meds, and notes
 * Frontend UI (React + Vite + Tailwind)
